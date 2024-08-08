@@ -1,1 +1,80 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive GIF Gallery</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        .gif-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            max-width: 1000px; /* Maximum width of the gallery */
+            width: 100%; /* Full width for smaller screens */
+        }
+        .gif-item {
+            flex: 1 1 calc(20% - 10px); /* 5 items per row with gap */
+            max-width: 200px; /* Maximum width for each GIF */
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        img {
+            width: 100%; /* Scale image to fit container */
+            height: auto;
+        }
+        
+        @media (max-width: 800px) {
+            .gif-item {
+                flex: 1 1 calc(33.33% - 10px); /* 3 items per row on medium screens */
+            }
+        }
+
+        @media (max-width: 500px) {
+            .gif-item {
+                flex: 1 1 calc(50% - 10px); /* 2 items per row on small screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Responsive GIF Gallery</h1>
+    <div class="gif-container">
+        <div class="gif-item">
+            <img src="https://example.com/gif1.gif" alt="GIF 1">
+        </div>
+        <div class="gif-item">
+            <img src="https://example.com/gif2.gif" alt="GIF 2">
+        </div>
+        <div class="gif-item">
+            <img src="https://example.com/gif3.gif" alt="GIF 3">
+        </div>
+        <div class="gif-item">
+            <img src="https://example.com/gif4.gif" alt="GIF 4">
+        </div>
+        <div class="gif-item">
+            <img src="https://example.com/gif5.gif" alt="GIF 5">
+        </div>
+        <div class="gif-item">
+            <img src="https://example.com/gif6.gif" alt="GIF 6">
+        </div>
+        <div class="gif-item">
+            <img src="https://example.com/gif7.gif" alt="GIF 7">
+        </div>
+    </div>
+</body>
+</html>
