@@ -3,77 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive GIF Gallery</title>
+    <meta name="robots" content="noindex">
+    <title>Mack Tang - Projects Gallery</title>
     <style>
         body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            background-color: #f0f0f0;
             font-family: Arial, sans-serif;
             margin: 0;
-            padding: 20px;
+            padding: 0;
+            background-color: #121212; /* Dark background */
+            color: white; /* Light text color */
         }
-        h1 {
-            margin-bottom: 20px;
-        }
-        .gif-container {
+        header {
+            background-color: #1E1E1E; /* Darker header background */
+            color: white;
+            padding: 10px 20px;
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-            max-width: 1000px; /* Maximum width of the gallery */
-            width: 100%; /* Full width for smaller screens */
+            align-items: center;
+            justify-content: space-between;
         }
-        .gif-item {
-            flex: 1 1 calc(20% - 10px); /* 5 items per row with gap */
-            max-width: 200px; /* Maximum width for each GIF */
-            border: 2px solid #ccc;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        nav {
+            display: flex;
+            gap: 20px;
         }
-        img {
-            width: 100%; /* Scale image to fit container */
-            height: auto;
+        nav a {
+            color: white;
+            text-decoration: none;
         }
-        
-        @media (max-width: 800px) {
-            .gif-item {
-                flex: 1 1 calc(33.33% - 10px); /* 3 items per row on medium screens */
-            }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            text-align: center;
         }
-
-        @media (max-width: 500px) {
-            .gif-item {
-                flex: 1 1 calc(50% - 10px); /* 2 items per row on small screens */
-            }
+        .video {
+            max-width: 2400px;
+            width: 100%;
+        }
+        .description {
+            margin-top: 10px;
+            text-align: left;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        h2 {
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
-    <h1>Responsive GIF Gallery</h1>
-    <div class="gif-container">
-        <div class="gif-item">
-            <img src="https://example.com/gif1.gif" alt="GIF 1">
+    <header>
+        <div>Mack Tang</div>
+        <nav>
+            <a href="#about">About/Contact</a>
+            <a href="#gallery">Projects Gallery</a>
+        </nav>
+    </header>
+    <div class="container">
+        <h1>Mack Tang - Projects Gallery</h1>
+        
+        <div>
+            <video class="video" controls>
+                <source src="https://raw.githubusercontent.com/tangmack/tangmack.github.io/main/media/output1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <h2>Video Title 1</h2>
+            <p class="description">This is a detailed description of what the first video represents. You can explain the concepts, techniques, or any other relevant information about the project showcased in the video.</p>
         </div>
-        <div class="gif-item">
-            <img src="https://example.com/gif2.gif" alt="GIF 2">
+
+        <div>
+            <video class="video" controls>
+                <source src="https://raw.githubusercontent.com/tangmack/tangmack.github.io/main/media/output1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <h2>Video Title 2</h2>
+            <p class="description">This is a detailed description of what the second video represents. You can discuss the innovations or challenges faced during the project shown in this video.</p>
         </div>
-        <div class="gif-item">
-            <img src="https://example.com/gif3.gif" alt="GIF 3">
-        </div>
-        <div class="gif-item">
-            <img src="https://example.com/gif4.gif" alt="GIF 4">
-        </div>
-        <div class="gif-item">
-            <img src="https://example.com/gif5.gif" alt="GIF 5">
-        </div>
-        <div class="gif-item">
-            <img src="https://example.com/gif6.gif" alt="GIF 6">
-        </div>
-        <div class="gif-item">
-            <img src="https://example.com/gif7.gif" alt="GIF 7">
+
+        <div>
+            <video class="video" controls>
+                <source src="https://raw.githubusercontent.com/tangmack/tangmack.github.io/main/media/output1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <h2>Video Title 3</h2>
+            <p class="description">This is a detailed description of what the third video represents. Include any insights or future directions related to the project illustrated in this video.</p>
         </div>
     </div>
 </body>
