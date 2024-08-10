@@ -34,19 +34,31 @@
             margin: 20px auto;
             text-align: center;
         }
+        .video-container {
+            margin-bottom: 40px; /* Space between video sections */
+            /* padding: 20px; Remove this line */
+            background-color: #1E1E1E; /* Light background for contrast */
+            border-radius: 8px; /* Rounded corners */
+        }
         .video {
             max-width: 2400px;
             width: 100%;
         }
-        .description {
-            margin-top: 10px;
-            text-align: left;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
+        .video-title {
+            font-weight: bold; /* Make the title bold */
+            margin-top: 10px; /* Space above the title */
         }
-        h2 {
-            margin-top: 20px;
+        .description {
+            margin-top: 5px; /* Space above the description */
+        }
+        hr {
+            border: none;
+            height: 2px; /* Thickness of the line */
+            background-color: white; /* Color of the line */
+            margin: 20px 0; /* Space above and below the line */
+        }
+        .empty-space {
+            margin-bottom: 40px; /* Space equivalent to two empty lines */
         }
     </style>
 </head>
@@ -61,31 +73,37 @@
     <div class="container">
         <h1>Mack Tang - Projects Gallery</h1>
         
-        <div>
-            <video class="video" controls>
+        <div class="video-container">
+            <video class="video" controls autoplay muted>
                 <source src="https://raw.githubusercontent.com/tangmack/tangmack.github.io/main/media/output1.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <h2>Video Title 1</h2>
+            <h2 class="video-title">Video Title 1</h2>
             <p class="description">This is a detailed description of what the first video represents. You can explain the concepts, techniques, or any other relevant information about the project showcased in the video.</p>
+            <hr> <!-- Horizontal bar -->
+            <div class="empty-space"></div> <!-- Empty space -->
         </div>
 
-        <div>
+        <div class="video-container">
             <video class="video" controls>
                 <source src="https://raw.githubusercontent.com/tangmack/tangmack.github.io/main/media/output1.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <h2>Video Title 2</h2>
+            <h2 class="video-title">Video Title 2</h2>
             <p class="description">This is a detailed description of what the second video represents. You can discuss the innovations or challenges faced during the project shown in this video.</p>
+            <hr> <!-- Horizontal bar -->
+            <div class="empty-space"></div> <!-- Empty space -->
         </div>
 
-        <div>
+        <div class="video-container">
             <video class="video" controls>
                 <source src="https://raw.githubusercontent.com/tangmack/tangmack.github.io/main/media/output1.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <h2>Video Title 3</h2>
+            <h2 class="video-title">Video Title 3</h2>
             <p class="description">This is a detailed description of what the third video represents. Include any insights or future directions related to the project illustrated in this video.</p>
+            <hr> <!-- Horizontal bar -->
+            <div class="empty-space"></div> <!-- Empty space -->
         </div>
     </div>
 </body>
