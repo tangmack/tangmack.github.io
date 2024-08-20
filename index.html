@@ -36,13 +36,12 @@
         }
         .video-container {
             margin-bottom: 40px; /* Space between video sections */
-            /* padding: 20px; Remove this line */
             background-color: #1E1E1E; /* Light background for contrast */
             border-radius: 8px; /* Rounded corners */
         }
         .video {
-            max-width: 2400px;
-            width: 100%;
+            max-width: 100%;
+            height: auto; /* Maintain aspect ratio */
         }
         .video-title {
             font-weight: bold; /* Make the title bold */
@@ -60,14 +59,28 @@
         .empty-space {
             margin-bottom: 40px; /* Space equivalent to two empty lines */
         }
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+        }
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
     </style>
 </head>
 <body>
     <header>
         <div>Mack Tang</div>
         <nav>
-            <a href="#about">About/Contact</a>
-            <a href="#gallery">Projects Gallery</a>
+            <a href="about.html">About/Contact</a>
+            <a href="index.html">Projects Gallery</a>
         </nav>
     </header>
     <div class="container">
@@ -86,7 +99,7 @@
 
         <div class="video-container">
             <video class="video" controls>
-                <source src="https://raw.githubusercontent.com/tangmack/tangmack.github.io/main/media/output1.mp4" type="video/mp4">
+                <source src="https://raw.githubusercontent.com/tangmack/tangmack.github.io/main/media/output_highlights_compressed.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
             <h2 class="video-title">Video Title 2</h2>
@@ -96,11 +109,40 @@
         </div>
 
         <div class="video-container">
-            <video class="video" controls>
-                <source src="https://raw.githubusercontent.com/tangmack/tangmack.github.io/main/media/output1.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/bMr83M3BMjE?rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
             <h2 class="video-title">Video Title 3</h2>
+            <p class="description">This is a detailed description of what the third video represents. Include any insights or future directions related to the project illustrated in this video.</p>
+            <hr> <!-- Horizontal bar -->
+            <div class="empty-space"></div> <!-- Empty space -->
+        </div>
+
+        <div class="video-container">
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/BdJqLI1-PAk?rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <h2 class="video-title">Video Title 4</h2>
+            <p class="description">This is a detailed description of what the third video represents. Include any insights or future directions related to the project illustrated in this video.</p>
+            <hr> <!-- Horizontal bar -->
+            <div class="empty-space"></div> <!-- Empty space -->
+        </div>
+
+        <div class="video-container">
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/xowrt6ShdCw?rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <h2 class="video-title">Video Title 5</h2>
+            <p class="description">This is a detailed description of what the third video represents. Include any insights or future directions related to the project illustrated in this video.</p>
+            <hr> <!-- Horizontal bar -->
+            <div class="empty-space"></div> <!-- Empty space -->
+        </div>
+
+        <div class="video-container">
+            <div class="video-wrapper">
+                <iframe src="https://raw.githubusercontent.com/tangmack/tangmack.github.io/main/media/traj_opt_2D_SRB_cc.mp4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <h2 class="video-title">Video Title 5</h2>
             <p class="description">This is a detailed description of what the third video represents. Include any insights or future directions related to the project illustrated in this video.</p>
             <hr> <!-- Horizontal bar -->
             <div class="empty-space"></div> <!-- Empty space -->
@@ -108,3 +150,4 @@
     </div>
 </body>
 </html>
+
