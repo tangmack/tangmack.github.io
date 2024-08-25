@@ -49,6 +49,8 @@
         }
         .description {
             margin-top: 5px; /* Space above the description */
+            text-align: left; /* Ensure text is left-aligned */
+            text-indent: 2em; /* Add an indent to the first line */
         }
         hr {
             border: none;
@@ -80,6 +82,7 @@
         <div>Mack Tang</div>
         <nav>
             <a href="about.html">About/Contact</a>
+            <a href="publications.html">Publications</a>
             <a href="index.html">Projects Gallery</a>
         </nav>
     </header>
@@ -87,23 +90,31 @@
         <h1>Mack Tang - Projects Gallery</h1>
         
         <div class="video-container">
-            <video class="video" controls autoplay muted>
-                <source src="https://raw.githubusercontent.com/tangmack/tangmack.github.io/main/media/output1.mp4" type="video/mp4">
+            <!-- <video class="video" controls autoplay muted> -->
+            <video class="video" controls muted>
+                <source src="https://d2qh2ul4zmsrls.cloudfront.net/output1.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <h2 class="video-title">Video Title 1</h2>
-            <p class="description">This is a detailed description of what the first video represents. You can explain the concepts, techniques, or any other relevant information about the project showcased in the video.</p>
+            <h2 class="video-title">Biped Humanoid Walking and Running using MPC + WBC (Implemented in C++)</h2>
+            <p class="description">Walking, curved paths, sidestepping, spin move, orientation control, disturbance rejection, moving arms, and running. Method for control is Nonconvex MPC and WBC. Converted URDF to XML format (for Tello robot created primarily by UIUC), and set up simulation environment from scratch using Mujoco and C++.
+                Defined my own Object Oriented architecture/organization for all classes. Determined how to use Mujoco to pull the mass matrix, coriolis/centrifugal terms, floating base/joint state, and any needed Jacobians. 
+                Implemented classes to translate the MPC optimization problem from math into Casadi and C++. Existing classes were leveraged for the WBC and the Bezier curve generation. Implemented COM reference trajectory generation using linear ramps for linear and angular velocities, and integrating to get positions, with fixed contact/gait schedules. Either the MPC or WBC can function decently completely independently of the other, but each has it's own drawbacks when used alone. 
+                A large part of this project was thoroughly understanding the math and theory behind both MPC and WBC formulations, in order to implement and troubleshoot to a bug-free controller. CMakeLists.txt files were created to facilitate compiling my own code alongside Mujoco, Casadi, Eigen, and existing WBC code.
+                A YAML file was created to reduce unecessary compiling, as well as to sequence all of the moves shown. 
+                A large focus of this project was writing easy to understand code, in terms of overall class organization, naming of classes and objects, and well commented code (for my own sake). 
+                Standing-in-place was first set up using pure MPC, then with pure WBC, followed by the swing controller, walking in place, walking forward, yaw control, and so on, with much troubleshooting occuring along the way.</p>
             <hr> <!-- Horizontal bar -->
             <div class="empty-space"></div> <!-- Empty space -->
         </div>
 
         <div class="video-container">
             <video class="video" controls>
-                <source src="https://raw.githubusercontent.com/tangmack/tangmack.github.io/main/media/output_highlights_compressed.mp4" type="video/mp4">
+                <source src="https://d2qh2ul4zmsrls.cloudfront.net/output_highlights_compressed.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <h2 class="video-title">Video Title 2</h2>
-            <p class="description">This is a detailed description of what the second video represents. You can discuss the innovations or challenges faced during the project shown in this video.</p>
+            <h2 class="video-title">Quadruped Control using Convex MPC (Python)</h2>
+            <p class="description">Disturbance rejection, yaw, forward walk, sidestep, slalom. Simulation and control run with real-time factor 1.0 on a regular laptop. Reimplementation of the paper "Dynamic Locomotion in the MIT Cheetah 3 through Convex MPC" using Python and Pybullet. 
+                Coded forward kinematics, discrete time state space, Bezier curve swing trajectory, COM reference trajectory generation, force control stance, corrected URDF, implemented MPC with qpOASES and "condensed" QP formulation. All code was implemented from scrtach in Python with exception of optimization solver and Pybullet, and libraries such as numpy, using the original paper as a reference.</p>
             <hr> <!-- Horizontal bar -->
             <div class="empty-space"></div> <!-- Empty space -->
         </div>
@@ -112,8 +123,10 @@
             <div class="video-wrapper">
                 <iframe src="https://www.youtube.com/embed/bMr83M3BMjE?rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
-            <h2 class="video-title">Video Title 3</h2>
-            <p class="description">This is a detailed description of what the third video represents. Include any insights or future directions related to the project illustrated in this video.</p>
+            <h2 class="video-title">Custom Joint PD Control for HyperLeg (DARoS Legged Lab)</h2>
+            <p class="description">Programmed Joint PD Control on HyperLeg hardware in C++. Programmed hardware bridge in C++ for deployment on Intel Up Extreme embedded system. Interfaced with off-the-shelf FOC BLDC controllers using C++. 
+                Installed PREEMPT_RT soft real-time kernel patch for Ubuntu on embedded system, and quantified "real-timeness" of the control loop. Determined encoder zeroing/calibration startup procedure. Coded Finite State Machine to run motion demo. 
+                Measured encoder errors due to backlash and belt stretching. Suggested changes to mechanical design (belt kept falling off due to lack of guide rail).  </p>
             <hr> <!-- Horizontal bar -->
             <div class="empty-space"></div> <!-- Empty space -->
         </div>
@@ -122,8 +135,12 @@
             <div class="video-wrapper">
                 <iframe src="https://www.youtube.com/embed/BdJqLI1-PAk?rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
-            <h2 class="video-title">Video Title 4</h2>
-            <p class="description">This is a detailed description of what the third video represents. Include any insights or future directions related to the project illustrated in this video.</p>
+            <h2 class="video-title">Real-time Capable Hopping in Place (WBC + Convex MPC) using C++</h2>
+            <p class="description">Implemented using a Ground Reaction Force representation, benchmarked MPC speed on embedded system, then changed to a Ground Reaction Wrench representation (which was much faster). Formulation is real-time capable on an Intel Up Extreme embedded system. Translated MPC optimization formulation from math into C++ using qpOASES for a 3D, 6-DOF leg with actuated toe, with 5 contact points (condensed formulation). 
+                Leveraged existing code for WBC and swing control. Defined reference trajectory and contact schedule.
+                Wrote error-free URDF from scratch, and exported meshes and inertias from CAD system. 
+                Troubleshooting using plotting in Python and solving optimization problem at specific instances in Matlab.
+            </p>
             <hr> <!-- Horizontal bar -->
             <div class="empty-space"></div> <!-- Empty space -->
         </div>
@@ -132,22 +149,44 @@
             <div class="video-wrapper">
                 <iframe src="https://www.youtube.com/embed/xowrt6ShdCw?rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
-            <h2 class="video-title">Video Title 5</h2>
-            <p class="description">This is a detailed description of what the third video represents. Include any insights or future directions related to the project illustrated in this video.</p>
+            <h2 class="video-title">Furuta Pendulum</h2>
+            <p class="description">Designed, built, programmed, and tested Furuta Pendulum. Coded full-state feedback loop with LQR gains. Hardware: BLDC, slipring, ODrive FOC BLDC controller, Teensy, absolute encoder. Simulation: Matlab.
+                Assigned frames using Denavit-Hartenberg, derived dynamics with Lagrangian, linearized nonlinear DEs, performed system identification, implemented LQR in sim/real-time on hardware (control loop 333 hz).
+            </p>
             <hr> <!-- Horizontal bar -->
             <div class="empty-space"></div> <!-- Empty space -->
         </div>
 
         <div class="video-container">
             <video class="video" controls>
-                <source src="https://raw.githubusercontent.com/tangmack/tangmack.github.io/main/media/traj_opt_staccatoe_2D_SRBM_closed_chain_5_swing.mp4" type="video/mp4">
+                <source src="https://d2qh2ul4zmsrls.cloudfront.net/traj_opt_staccatoe_2D_SRBM_closed_chain_5_swing.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <h2 class="video-title">Video Title 6</h2>
-            <p class="description">This is a detailed description of what the second video represents. You can discuss the innovations or challenges faced during the project shown in this video.</p>
+            <h2 class="video-title">Kinodynamic Trajectory Optimization for Jumping (Closed-chain torque limits)</h2>
+            <p class="description">Implemented and experimented with the following trajectory optimization formulations using Matlab and Casadi/IPOPT: Full Dynamics, Single Rigid Body Model, Open Chain, Closed Chain, with actuated toe, without actuated toe, 2D, and 3D. Derived forward kinematics and all Jacobians using Denavit Hartenberg frame convention, in both 2D and 3D. Derived Full Dynamic equations using Lagrangian in 2D and 3D. 
+                Experimented with  with initial guesses, slack variables, adding and removing constraints. Compared capabilities with and without actuated toe.
+                The above video shows 2D Single Rigid Body Model for the dynamical model, with closed chain torque limits in place and actuated toe.
+            </p>
             <hr> <!-- Horizontal bar -->
             <div class="empty-space"></div> <!-- Empty space -->
         </div>
+
+        
+        <div class="video-container">
+            <video class="video" controls>
+                <source src="https://d2qh2ul4zmsrls.cloudfront.net/floating_base_and_biped_compressed.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <h2 class="video-title">Floating Base Position and Orientation Control using Task-Space Controller</h2>
+            <p class="description">Controlling a floating base link using a force and torque at the center of mass as input. 
+                This is a custom reimplementation using Python, Pybullet, and Casadi of Task-Space Controller presented in the paper "Orientation-Aware Model Predictive Control with Footstep Adaptation for Dynamic Humanoid Walking". 
+                However, the optimization problem has fewer constraints: dynamical constraints do not include any arms or legs, and there are no line-contact or foot-remains-still constraints. 
+                Moving to a full biped would be a next step, this is still a work in progress.
+            <hr> <!-- Horizontal bar -->
+            <div class="empty-space"></div> <!-- Empty space -->
+        </div>
+
+
     </div>
 </body>
 </html>
