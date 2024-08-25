@@ -76,22 +76,39 @@
             height: 100%;
         }
     </style>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            if (!sessionStorage.getItem('hasVisited')) {
+                // First visit, allow autoplay
+                var video = document.getElementById('firstVideo');
+                if (video) {
+                    video.setAttribute('autoplay', '');
+                    video.setAttribute('muted', ''); // Ensure muted for autoplay
+                }
+                sessionStorage.setItem('hasVisited', 'true');
+            }
+        });
+    </script>
+
 </head>
-<body>
+<!-- <body> -->
+<body onload="checkFirstVisit()">
     <header>
         <div>Mack Tang</div>
         <nav>
             <a href="about.html">About/Contact</a>
-            <a href="publications.html">Publications</a>
             <a href="index.html">Projects Gallery</a>
+            <a href="publications.html">Publications</a>
         </nav>
     </header>
     <div class="container">
         <h1>Mack Tang - Projects Gallery</h1>
         
         <div class="video-container">
+            <video id="firstVideo" class="video" controls muted>
             <!-- <video class="video" controls autoplay muted> -->
-            <video class="video" controls muted>
+            <!-- <video class="video" controls muted> -->
                 <source src="https://d2qh2ul4zmsrls.cloudfront.net/output1.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
@@ -145,18 +162,7 @@
             <div class="empty-space"></div> <!-- Empty space -->
         </div>
 
-        <div class="video-container">
-            <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/xowrt6ShdCw?rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-            <h2 class="video-title">Furuta Pendulum</h2>
-            <p class="description">Designed, built, programmed, and tested Furuta Pendulum. Coded full-state feedback loop with LQR gains. Hardware: BLDC, slipring, ODrive FOC BLDC controller, Teensy, absolute encoder. Simulation: Matlab.
-                Assigned frames using Denavit-Hartenberg, derived dynamics with Lagrangian, linearized nonlinear DEs, performed system identification, implemented LQR in sim/real-time on hardware (control loop 333 hz).
-            </p>
-            <hr> <!-- Horizontal bar -->
-            <div class="empty-space"></div> <!-- Empty space -->
-        </div>
-
+        
         <div class="video-container">
             <video class="video" controls>
                 <source src="https://d2qh2ul4zmsrls.cloudfront.net/traj_opt_staccatoe_2D_SRBM_closed_chain_5_swing.mp4" type="video/mp4">
@@ -165,7 +171,8 @@
             <h2 class="video-title">Kinodynamic Trajectory Optimization for Jumping (Closed-chain torque limits)</h2>
             <p class="description">Implemented and experimented with the following trajectory optimization formulations using Matlab and Casadi/IPOPT: Full Dynamics, Single Rigid Body Model, Open Chain, Closed Chain, with actuated toe, without actuated toe, 2D, and 3D. Derived forward kinematics and all Jacobians using Denavit Hartenberg frame convention, in both 2D and 3D. Derived Full Dynamic equations using Lagrangian in 2D and 3D. 
                 Experimented with  with initial guesses, slack variables, adding and removing constraints. Compared capabilities with and without actuated toe.
-                The above video shows 2D Single Rigid Body Model for the dynamical model, with closed chain torque limits in place and actuated toe.
+                The above video shows 2D Single Rigid Body Model for the dynamical model, with closed chain torque limits in place and actuated toe. 
+                This optimization framework was used to generate an offline trajectory, which was then tracked using joint PD control in order to make the robot jump on real hardware (see publications section for video).
             </p>
             <hr> <!-- Horizontal bar -->
             <div class="empty-space"></div> <!-- Empty space -->
@@ -182,10 +189,21 @@
                 This is a custom reimplementation using Python, Pybullet, and Casadi of Task-Space Controller presented in the paper "Orientation-Aware Model Predictive Control with Footstep Adaptation for Dynamic Humanoid Walking". 
                 However, the optimization problem has fewer constraints: dynamical constraints do not include any arms or legs, and there are no line-contact or foot-remains-still constraints. 
                 Moving to a full biped would be a next step, this is still a work in progress.
-            <hr> <!-- Horizontal bar -->
-            <div class="empty-space"></div> <!-- Empty space -->
-        </div>
-
+                <hr> <!-- Horizontal bar -->
+                <div class="empty-space"></div> <!-- Empty space -->
+            </div>
+            
+            <div class="video-container">
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/xowrt6ShdCw?rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <h2 class="video-title">Furuta Pendulum</h2>
+                <p class="description">Designed, built, programmed, and tested Furuta Pendulum. Coded full-state feedback loop with LQR gains. Hardware: BLDC, slipring, ODrive FOC BLDC controller, Teensy, absolute encoder. Simulation: Matlab.
+                    Assigned frames using Denavit-Hartenberg, derived dynamics with Lagrangian, linearized nonlinear DEs, performed system identification, implemented LQR in sim/real-time on hardware (control loop 333 hz).
+                </p>
+                <hr> <!-- Horizontal bar -->
+                <div class="empty-space"></div> <!-- Empty space -->
+            </div>
 
     </div>
 </body>
