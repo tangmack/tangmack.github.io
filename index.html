@@ -113,7 +113,7 @@
                 Your browser does not support the video tag.
             </video>
             <h2 class="video-title">Biped Humanoid Walking and Running using MPC + WBC (Implemented in C++)</h2>
-            <p class="description">Walking, curved paths, sidestepping, spin move, orientation control, disturbance rejection, moving arms, and running. Method for control is Nonconvex MPC and WBC. Converted URDF to XML format (for Tello robot created primarily by UIUC), and set up simulation environment from scratch using Mujoco and C++.
+            <p class="description">Walking, curved paths, sidestepping, spin move, orientation control, disturbance rejection, moving arms, and running. Method for control is Nonconvex MPC and WBC. Converted URDF to XML format (for Tello robot, hardware designed primarily by UIUC), and set up simulation environment from scratch using Mujoco and C++.
                 Defined my own Object Oriented architecture/organization for all classes. Determined how to use Mujoco to pull the mass matrix, coriolis/centrifugal terms, floating base/joint state, and any needed Jacobians. 
                 Implemented classes to translate the MPC optimization problem from math into Casadi and C++. Existing classes were leveraged for the WBC and the Bezier curve generation. Implemented COM reference trajectory generation using linear ramps for linear and angular velocities, and integrating to get positions, with fixed contact/gait schedules. Either the MPC or WBC can function decently completely independently of the other, but each has it's own drawbacks when used alone. 
                 A large part of this project was thoroughly understanding the math and theory behind both MPC and WBC formulations, in order to implement and troubleshoot to a bug-free controller. CMakeLists.txt files were created to facilitate compiling my own code alongside Mujoco, Casadi, Eigen, and existing WBC code.
@@ -191,19 +191,45 @@
                 Moving to a full biped would be a next step, this is still a work in progress.
                 <hr> <!-- Horizontal bar -->
                 <div class="empty-space"></div> <!-- Empty space -->
-            </div>
-            
-            <div class="video-container">
-                <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/xowrt6ShdCw?rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-                <h2 class="video-title">Furuta Pendulum</h2>
-                <p class="description">Designed, built, programmed, and tested Furuta Pendulum. Coded full-state feedback loop with LQR gains. Hardware: BLDC, slipring, ODrive FOC BLDC controller, Teensy, absolute encoder. Simulation: Matlab.
-                    Assigned frames using Denavit-Hartenberg, derived dynamics with Lagrangian, linearized nonlinear DEs, performed system identification, implemented LQR in sim/real-time on hardware (control loop 333 hz).
-                </p>
+        </div>
+        
+        <div class="video-container">
+            <video class="video" controls>
+                <source src="https://d2qh2ul4zmsrls.cloudfront.net/fast_pick.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <h2 class="video-title">Agile Robotics for Industrial Automation Competition (C++, ROS, MoveIt, Gazebo)</h2>
+            <p class="description">Semester-long course focused on kit building simulation competition (pick up objects from shelves and place in a tray). Worked on a team of 4 to code dual UR-10 arms on a 3-axis gantry. Tools: C++ MoveIt, Gazebo, ROS, Git, Doxygen. The video shows one aspect of the challenge, which was to pick up objects while avoiding a moving human. Inverse kinematics and trajectory planning used MoveIt.
                 <hr> <!-- Horizontal bar -->
                 <div class="empty-space"></div> <!-- Empty space -->
+        </div>
+
+
+            
+        <div class="video-container">
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/gd4FcIiM_6U?rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
+            <h2 class="video-title">UR-5 Defect Inspection Move Sequence</h2>
+            <p class="description"> Programmed UR-5 Robotic Arm move sequence for defect inspection using UR-script (essentially Python). During my time at this company, my primary role was to program machine vision for automated inspection of various objects such as tires, mobile phones, plastic bags, car interior buttons, pizza, plastic caps, metal, and contact lenses. 
+                However for this application we needed to pick up an object and inspect it at different camera stations. I was tasked with programming the move sequence as a demo for our clients, and our work on this demo led to them awarding us a bigger contract.
+            </p>
+            <hr> <!-- Horizontal bar -->
+            <div class="empty-space"></div> <!-- Empty space -->
+        </div>
+
+            
+        <div class="video-container">
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/xowrt6ShdCw?rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <h2 class="video-title">Furuta Pendulum</h2>
+            <p class="description">Designed, built, programmed, and tested Furuta Pendulum. Coded full-state feedback loop with LQR gains. Hardware: BLDC, slipring, ODrive FOC BLDC controller, Teensy, absolute encoder. Simulation: Matlab.
+                Assigned frames using Denavit-Hartenberg, derived dynamics with Lagrangian, linearized nonlinear DEs, performed system identification, implemented LQR in sim/real-time on hardware (control loop 333 hz).
+            </p>
+            <hr> <!-- Horizontal bar -->
+            <div class="empty-space"></div> <!-- Empty space -->
+        </div>
 
     </div>
 </body>
