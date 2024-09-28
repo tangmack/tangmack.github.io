@@ -109,6 +109,23 @@
             <video id="firstVideo" class="video" controls muted>
             <!-- <video class="video" controls autoplay muted> -->
             <!-- <video class="video" controls muted> -->
+                <source src="https://d2qh2ul4zmsrls.cloudfront.net/pick_and_drop_with_image_overlay_top_left.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <h2 class="video-title">Box Pickup and Dropoff using MPC + WBC (Implemented in C++)</h2>
+            <p class="description">Box pickup and dropoff controller. All code written in C++. For the 1kg box, the WBC + MPC controller was able to reject disturbances without any modifications. However the 5kg box, the robot could not even stand or pick up the box without falling. Hence the WBC + MPC formulation was modified to expect a disturbance force at the hands. A "sliding the box off the table" strategy was employed for the heavier box, as well as a "hugging the box against body" type of strategy. In addition, the WBC + MPC was modified to expect a disturbance force, which allowed it to walk around. Staggering the feet (one foot slightly forward, one foot back) was done to help pull the box off the table, but not needed after the WBC + MPC disturbance force modification. These changes helped with carrying the 5kg box.
+            The box can accept light disturbances, for both heavy or light box. In addition to moving the box around, the robot can control the box roll and yaw position.
+            A weight change from 5kg to 22kg while standing in place is demonstrated, the controller is given information about the new box mass at the same instant the mass is changed.
+            A basic UML diagram showing how the C++ classes are organized is included at the end of the video.
+            </p>
+            <hr> <!-- Horizontal bar -->
+            <div class="empty-space"></div> <!-- Empty space -->
+        </div>
+        
+        <div class="video-container">
+            <video id="firstVideo" class="video" controls muted>
+            <!-- <video class="video" controls autoplay muted> -->
+            <!-- <video class="video" controls muted> -->
                 <source src="https://d2qh2ul4zmsrls.cloudfront.net/output1.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
